@@ -1,0 +1,4 @@
+Scenario: Filter cards on a board
+  Given I am on the board page with multiple cards
+  When I apply a label filter
+  Then I should see only the cards that match the selected label

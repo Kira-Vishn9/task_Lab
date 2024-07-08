@@ -1,0 +1,5 @@
+Scenario: Create a new card in a list
+  Given I am on the board page with an existing list
+  When I click the "Add card" button in the list
+  And I enter a card name
+  Then I should see the new card in the list

@@ -1,0 +1,6 @@
+Scenario: Update profile information
+  Given I am logged in
+  And I am on the profile page
+  When I change my first name and last name
+  And I click the "Save changes" button
+  Then I should see a message indicating the profile was updated successfully

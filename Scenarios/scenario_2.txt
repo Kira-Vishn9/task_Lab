@@ -1,0 +1,6 @@
+Scenario: Login with existing user
+  Given I am on the login page
+  And I am a registered user
+  When I enter my credentials
+  And I click the "Login" button
+  Then I should be redirected to the homepage
