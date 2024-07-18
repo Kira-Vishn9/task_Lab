@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="Verify action on board adding lists and cards" timestamp="2024-07-12T18:24:24" time="21.22" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Verify action on board: adding lists and cards"/>
+      <property name="capabilities" value="chrome-headless-shell.126_0_6478_127.mac"/>
+      <property name="file" value="file://./test/specs/test.workspace.js"/>
+    </properties>
+    <testcase classname="chrome-headless-shell.126_0_6478_127.mac.Verify_action_on_board:_adding_lists_and_cards" name="Add card to existent list" time="21.211">
+      <system-out><![CDATA[
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/url - {"url":"https://trello.com/login"}
+RESULT: {"url":"https://trello.com/login"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"#username"}
+RESULT: {"using":"css selector","value":"#username"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/elements - {"using":"css selector","value":"#username"}
+RESULT: {"using":"css selector","value":"#username"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"#username"}
+RESULT: {"using":"css selector","value":"#username"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.2/clear - {}
+RESULT: {}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.2/value - {"text":"krtstgml@gmail.com"}
+RESULT: {"text":"krtstgml@gmail.com"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"#login-submit"}
+RESULT: {"using":"css selector","value":"#login-submit"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.14/click - {}
+RESULT: {}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"#password"}
+RESULT: {"using":"css selector","value":"#password"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15","ELEMENT":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15","ELEMENT":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15"}]}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15","ELEMENT":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15","ELEMENT":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15"}]}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15","ELEMENT":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15","ELEMENT":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15"}]}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15","ELEMENT":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15","ELEMENT":"f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15"}]}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"#password"}
+RESULT: {"using":"css selector","value":"#password"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15/clear - {}
+RESULT: {}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.15/value - {"text":"demotest69"}
+RESULT: {"text":"demotest69"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"#login-submit"}
+RESULT: {"using":"css selector","value":"#login-submit"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.89933181A8332D8953CA288C688B7DF4.e.14/click - {}
+RESULT: {}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/url - {"url":"https://trello.com/w/user38376778"}
+RESULT: {"url":"https://trello.com/w/user38376778"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+RESULT: {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/elements - {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+RESULT: {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/elements - {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+RESULT: {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/elements - {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+RESULT: {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+RESULT: {"using":"css selector","value":".Ch1Opdvr77xkJp.bxgKMAm3lq5BpA.iUcMblFAuq9LKn.SEj5vUdI3VvxDc"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.FC1E21F0643913B7286E5F5650725F40.e.146/click - {}
+RESULT: {}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"#displayName"}
+RESULT: {"using":"css selector","value":"#displayName"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.FC1E21F0643913B7286E5F5650725F40.e.147/clear - {}
+RESULT: {}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.FC1E21F0643913B7286E5F5650725F40.e.147/value - {"text":" "}
+RESULT: {"text":" "}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"#displayName"}
+RESULT: {"using":"css selector","value":"#displayName"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.FC1E21F0643913B7286E5F5650725F40.e.147/clear - {}
+RESULT: {}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.FC1E21F0643913B7286E5F5650725F40.e.147/value - {"text":"Рабочее пространство Trello Automate"}
+RESULT: {"text":"Рабочее пространство Trello Automate"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"._wJD3QSFJjW4Pb.bxgKMAm3lq5BpA.SdamsUKjxSBwGb.SEj5vUdI3VvxDc"}
+RESULT: {"using":"css selector","value":"._wJD3QSFJjW4Pb.bxgKMAm3lq5BpA.SdamsUKjxSBwGb.SEj5vUdI3VvxDc"}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.FC1E21F0643913B7286E5F5650725F40.e.151/click - {}
+RESULT: {}
+COMMAND: POST /session/0f8910a083bba2b83bc1d77899c00abf/element - {"using":"css selector","value":"#displayName"}
+RESULT: {"using":"css selector","value":"#displayName"}
+COMMAND: GET /session/0f8910a083bba2b83bc1d77899c00abf/element/f.502E521986E31F6BEDC31FED5C2D9DBD.d.FC1E21F0643913B7286E5F5650725F40.e.147/property/value - {}
+RESULT: {}
+COMMAND: DELETE /session/0f8910a083bba2b83bc1d77899c00abf - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

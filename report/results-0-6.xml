@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" errors="0" skipped="0">
+  <testsuite name="Verify Search from main menu" timestamp="2024-07-12T18:24:04" time="14.552" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Verify Search from main menu"/>
+      <property name="capabilities" value="chrome-headless-shell.126_0_6478_127.mac"/>
+      <property name="file" value="file://./test/specs/test.search.e2e.js"/>
+    </properties>
+    <testcase classname="chrome-headless-shell.126_0_6478_127.mac.Verify_Search_from_main_menu" name="Search for existent board at my boards page" time="14.545">
+      <system-out><![CDATA[
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/url - {"url":"https://trello.com/login"}
+RESULT: {"url":"https://trello.com/login"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element - {"using":"css selector","value":"#username"}
+RESULT: {"using":"css selector","value":"#username"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/elements - {"using":"css selector","value":"#username"}
+RESULT: {"using":"css selector","value":"#username"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/elements - {"using":"css selector","value":"#username"}
+RESULT: {"using":"css selector","value":"#username"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element - {"using":"css selector","value":"#username"}
+RESULT: {"using":"css selector","value":"#username"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element/f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.2/clear - {}
+RESULT: {}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element/f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.2/value - {"text":"krtstgml@gmail.com"}
+RESULT: {"text":"krtstgml@gmail.com"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element - {"using":"css selector","value":"#login-submit"}
+RESULT: {"using":"css selector","value":"#login-submit"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element/f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.14/click - {}
+RESULT: {}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element - {"using":"css selector","value":"#password"}
+RESULT: {"using":"css selector","value":"#password"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (8289 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15","ELEMENT":"f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15"}]}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element - {"using":"css selector","value":"#password"}
+RESULT: {"using":"css selector","value":"#password"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element/f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15/clear - {}
+RESULT: {}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element/f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.15/value - {"text":"demotest69"}
+RESULT: {"text":"demotest69"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element - {"using":"css selector","value":"#login-submit"}
+RESULT: {"using":"css selector","value":"#login-submit"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element/f.231A1A214A7C13187DA14606AA321AC2.d.ED3BF1B0A838CE37296E0819BEC9721C.e.14/click - {}
+RESULT: {}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/url - {"url":"https://trello.com/search"}
+RESULT: {"url":"https://trello.com/search"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element - {"using":"css selector","value":"input[data-testid=\"advanced-search-input\"]"}
+RESULT: {"using":"css selector","value":"input[data-testid=\"advanced-search-input\"]"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element/f.231A1A214A7C13187DA14606AA321AC2.d.E6846870699D69EAC649C70928B1DDCC.e.106/clear - {}
+RESULT: {}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element/f.231A1A214A7C13187DA14606AA321AC2.d.E6846870699D69EAC649C70928B1DDCC.e.106/value - {"text":"Board created for Search"}
+RESULT: {"text":"Board created for Search"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/element - {"using":"css selector","value":"a[title=\"Board created for Search\"]"}
+RESULT: {"using":"css selector","value":"a[title=\"Board created for Search\"]"}
+COMMAND: POST /session/a348a9b2979cd53fc3b2d988b1096e40/elements - {"using":"css selector","value":"a[title=\"Board created for Search\"]"}
+COMMAND: DELETE /session/a348a9b2979cd53fc3b2d988b1096e40 - {}
+RESULT: {"using":"css selector","value":"a[title=\"Board created for Search\"]"}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

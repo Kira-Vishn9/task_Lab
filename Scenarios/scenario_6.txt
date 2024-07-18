@@ -1,5 +1,6 @@
-Scenario: Create a new list on a board
-  Given I am on the board page
-  When I click the "Add list" button
-  And I enter a list name
-  Then I should see the new list on the board
+Scenario: Create a new card in a list
+  Given I am on the board page with an existing list
+  When I click the "Add card" button in the list
+  And I enter a card name
+  And click button 'add card'
+  Then I should see the new card in the list

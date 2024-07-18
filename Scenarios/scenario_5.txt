@@ -1,5 +1,5 @@
-Scenario: Search for an existing board
-  Given I am logged in
-  And I have multiple boards
-  When I enter the board name in the search bar
-  Then I should see results matching the query
+Scenario: Create a new list on a board
+  Given I am on the board page
+  When I click the "Add list" button
+  And I enter a list name
+  Then I should see the new list on the board

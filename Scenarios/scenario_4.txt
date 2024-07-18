@@ -1,6 +1,6 @@
-Scenario: Create a new board
+Scenario: Search for an existing board
   Given I am logged in
-  And I am on the homepage
-  When I click the "Create board" button
-  And I enter a board name
-  Then I should see the new board on my homepage
+  And I am in a search page
+  And I have multiple boards
+  When I enter the board name in the search input
+  Then I should see results matching the query

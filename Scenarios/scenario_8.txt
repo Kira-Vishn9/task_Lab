@@ -1,4 +1,6 @@
-Scenario: Filter cards on a board
-  Given I am on the board page with multiple cards
-  When I apply a label filter
-  Then I should see only the cards that match the selected label
+Scenario: Edit workspace settings
+  Given I am on the workspace settings page
+  When I click button edit workspace name
+  And I change the workspace name
+  And I click the "Save" button
+  Then I should see a new warkspace name indicating the workspace was updated successfully

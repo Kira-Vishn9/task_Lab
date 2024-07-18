@@ -1,6 +1,7 @@
-Scenario: Login with existing user
-  Given I am on the login page
-  And I am a registered user
-  When I enter my credentials
-  And I click the "Login" button
-  Then I should be redirected to the homepage
+Scenario: Update profile information
+  Given I am logged in
+  And I am on the profile page
+  When I change bio
+  And I click the save button
+  And refresh page
+  Then I should see saved the bio information
