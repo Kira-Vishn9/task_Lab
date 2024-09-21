@@ -28,15 +28,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Install WebDriverIO CLI
-      run: npm install --save-dev @wdio/cli
-
-    - name: Install Chromium and ChromeDriver
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y chromium-browser
-        npm install chromedriver
-
     - name: Run WebDriverIO tests
       run: npx wdio run wdio.conf.js
 
