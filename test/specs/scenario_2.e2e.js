@@ -9,7 +9,7 @@ describe('Verify Profile changes', () => {
     });
 
     it('Edit bio in profile name', async () => {
-        await browser.url('https://trello.com/home');
+        browser.url(`https://trello.com/home`)
         await $("//a[contains(text(), 'Log in')]").waitForDisplayed();
         await $("//a[contains(text(), 'Log in')]").click();
 

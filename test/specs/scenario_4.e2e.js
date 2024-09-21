@@ -4,7 +4,7 @@ const { browser } = require('@wdio/globals');
 describe('Search for an existing board on Trello', () => {
 
     it('should log in, search for a board, and verify it appears in the search results', async () => {
-        await browser.url('https://trello.com/home');
+        browser.url(`https://trello.com/home`)
         await $("//a[contains(text(), 'Log in')]").waitForDisplayed();
         await $("//a[contains(text(), 'Log in')]").click();
 

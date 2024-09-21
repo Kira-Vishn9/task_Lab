@@ -5,7 +5,7 @@ describe('Workspace settings - Editing workspace name', () => {
 
 
     it('should allow the user to edit the workspace name and save the changes', async () => {
-        await browser.url('https://trello.com/home');
+        browser.url(`https://trello.com/home`)
         await $("//a[contains(text(), 'Log in')]").waitForDisplayed();
         await $("//a[contains(text(), 'Log in')]").click();
 

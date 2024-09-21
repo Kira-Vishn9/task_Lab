@@ -4,7 +4,7 @@ const { browser } = require('@wdio/globals');
 describe('Create a new card in a list', () => {
 
     it('should log in, create a board and list, then add a new card to the list', async () => {
-        await browser.url('https://trello.com/home');
+        browser.url(`https://trello.com/home`)
         await $("//a[contains(text(), 'Log in')]").waitForDisplayed();
         await $("//a[contains(text(), 'Log in')]").click();
 
