@@ -1,0 +1,71 @@
+name: WebdriverIO CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        browser: [chrome, firefox, safari]
+
+    steps:
+      # Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Install WebdriverIO CLI
+      - name: Install WebdriverIO CLI
+        run: npm install --save-dev @wdio/cli
+
+      # Install ChromeDriver (for Chrome)
+      - name: Install Chrome Driver
+        if: matrix.browser == 'chrome'
+        run: |
+          brew install --cask google-chrome
+          brew install chromedriver
+
+      # Install GeckoDriver (for Firefox)
+      - name: Install GeckoDriver
+        if: matrix.browser == 'firefox'
+        run: |
+          brew install --cask firefox
+          brew install geckodriver
+
+      # (No additional setup required for Safari as it comes pre-installed on macOS)
+
+      # Run WebdriverIO tests
+      - name: Run WebdriverIO tests on ${{ matrix.browser }}
+        run: |
+          if [ "${{ matrix.browser }}" == "chrome" ]; then
+            npx wdio run wdio.conf.js --capabilities.browserName=chrome
+          elif [ "${{ matrix.browser }}" == "firefox" ]; then
+            npx wdio run wdio.conf.js --capabilities.browserName=firefox
+          elif [ "${{ matrix.browser }}" == "safari" ]; then
+            npx wdio run wdio.conf.js --capabilities.browserName=safari
+          fi
+
+      # (Optional) Generate Allure report if you're using Allure reporting
+      - name: Generate Allure report
+        run: |
+          npx allure generate allure-results --clean
+          npx allure open
