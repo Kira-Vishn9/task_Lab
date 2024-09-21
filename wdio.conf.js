@@ -4,7 +4,7 @@ const allure = require('allure-commandline');
 exports.config = {
     runner: 'local',
     specs: [
-        './test/specs/**/scenario_3.e2e.js'
+        './test/specs/**/*.e2e.js'
     ],
     exclude: [],
     maxInstances: 1,
@@ -15,15 +15,15 @@ exports.config = {
                 args: ['--headless', '--disable-gpu', '--window-size=1280,800']
             }
         },
-        // {
-        //     browserName: 'firefox',
-        //     'moz:firefoxOptions': {
-        //         args: ['-headless']
-        //     }
-        // },
-        // {
-        //     browserName: 'safari'
-        // }
+        {
+            browserName: 'firefox',
+            'moz:firefoxOptions': {
+                args: ['-headless']
+            }
+        },
+        {
+            browserName: 'safari'
+        }
     ],
     logLevel: 'error',
     bail: 0,
