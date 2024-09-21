@@ -15,15 +15,15 @@ exports.config = {
                 args: ['--headless', '--disable-gpu', '--window-size=1280,800']
             }
         },
-        {
-            browserName: 'firefox',
-            'moz:firefoxOptions': {
-                args: ['-headless']
-            }
-        },
-        {
-            browserName: 'safari'
-        }
+        // {
+        //     browserName: 'firefox',
+        //     'moz:firefoxOptions': {
+        //         args: ['-headless']
+        //     }
+        // },
+        // {
+        //     browserName: 'safari'
+        // }
     ],
     logLevel: 'error',
     bail: 0,

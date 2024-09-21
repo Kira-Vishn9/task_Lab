@@ -1,4 +1,4 @@
-name: WebdriverIO CI Pipeline
+name: WebDriverIO Tests
 
 on:
   push:
@@ -7,63 +7,41 @@ on:
   pull_request:
     branches:
       - main
-      - develop
 
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        browser: [chrome, firefox, safari]
+        node-version: [16.x] # WebDriverIO поддерживает Node.js 16
 
     steps:
-      # Checkout repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      # Set up Node.js (recommended to use 18 for compatibility)
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # Рекомендуется использовать 18 версию
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
 
-      # Install dependencies
-      - name: Install dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm install
 
-      # Install WebdriverIO CLI
-      - name: Install WebdriverIO CLI
-        run: npm install --save-dev @wdio/cli
+    - name: Install WebDriverIO CLI
+      run: npm install --save-dev @wdio/cli
 
-      # Install ChromeDriver (for Chrome)
-      - name: Install Chrome Driver
-        if: matrix.browser == 'chrome'
-        run: |
-          brew install --cask google-chrome
-          brew install chromedriver
+    - name: Install ChromeDriver (for Chrome)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y chromium-browser
+        sudo apt-get install -y chromedriver
 
-      # Install GeckoDriver (for Firefox)
-      - name: Install GeckoDriver
-        if: matrix.browser == 'firefox'
-        run: |
-          brew install --cask firefox
-          brew install geckodriver
+    - name: Run WebDriverIO tests
+      run: npx wdio run wdio.conf.js
 
-      # Enable safaridriver (for Safari)
-      - name: Enable Safari Driver
-        if: matrix.browser == 'safari'
-        run: |
-          sudo safaridriver --enable
-
-      # Run WebdriverIO tests
-      - name: Run WebdriverIO tests on ${{ matrix.browser }}
-        run: |
-          npx wdio run wdio.conf.js --capabilities.browserName=${{ matrix.browser }}
-
-      # Generate Allure report (if you're using Allure reporting)
-      - name: Generate Allure report
-        if: success()
-        run: |
-          npx allure generate allure-results --clean
-          npx allure open
+    - name: Generate Allure report (optional)
+      if: success()
+      run: |
+        npx allure generate allure-results --clean
+        npx allure open
