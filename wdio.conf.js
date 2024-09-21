@@ -8,18 +8,23 @@ exports.config = {
     ],
     exclude: [],
     maxInstances: 1,
-    capabilities: [{
-        browserName: process.env.BROWSER || 'chrome', 
-        'goog:chromeOptions': {
-            args: ['--headless', '--disable-gpu']
+    capabilities: [
+        {
+            browserName: 'chrome',
+            'goog:chromeOptions': {
+                args: ['--headless', '--disable-gpu', '--window-size=1280,800']
+            }
         },
-        'moz:firefoxOptions': {
-            args: ['-headless']  
+        {
+            browserName: 'firefox',
+            'moz:firefoxOptions': {
+                args: ['-headless']
+            }
         },
-        'safari.options': {
-            technologyPreview: true 
+        {
+            browserName: 'safari'
         }
-    }],
+    ],
     logLevel: 'error',
     bail: 0,
     baseUrl: 'http://localhost:8080',
