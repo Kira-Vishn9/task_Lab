@@ -5,6 +5,7 @@ describe('Create a new board on Trello', () => {
 
     it('should log in, create a new board, and verify its creation and redirection', async () => {
         browser.url(`https://trello.com/home`)
+        browser.pause(10000)
         await $("//a[contains(text(), 'Log in')]").waitForDisplayed();
         await $("//a[contains(text(), 'Log in')]").click();
 

@@ -5,6 +5,7 @@ describe('Create a new card in a list', () => {
 
     it('should log in, create a board and list, then add a new card to the list', async () => {
         browser.url(`https://trello.com/home`)
+        browser.pause(10000)
         await $("//a[contains(text(), 'Log in')]").waitForDisplayed();
         await $("//a[contains(text(), 'Log in')]").click();
 
