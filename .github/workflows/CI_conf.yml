@@ -22,11 +22,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Set up Node.js
+      # Set up Node.js (recommended to use 18 for compatibility)
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'  # Рекомендуется использовать 18 версию
 
       # Install dependencies
       - name: Install dependencies
@@ -50,21 +50,20 @@ jobs:
           brew install --cask firefox
           brew install geckodriver
 
-      # (No additional setup required for Safari as it comes pre-installed on macOS)
+      # Enable safaridriver (for Safari)
+      - name: Enable Safari Driver
+        if: matrix.browser == 'safari'
+        run: |
+          sudo safaridriver --enable
 
       # Run WebdriverIO tests
       - name: Run WebdriverIO tests on ${{ matrix.browser }}
         run: |
-          if [ "${{ matrix.browser }}" == "chrome" ]; then
-            npx wdio run wdio.conf.js --capabilities.browserName=chrome
-          elif [ "${{ matrix.browser }}" == "firefox" ]; then
-            npx wdio run wdio.conf.js --capabilities.browserName=firefox
-          elif [ "${{ matrix.browser }}" == "safari" ]; then
-            npx wdio run wdio.conf.js --capabilities.browserName=safari
-          fi
+          npx wdio run wdio.conf.js --capabilities.browserName=${{ matrix.browser }}
 
-      # (Optional) Generate Allure report if you're using Allure reporting
+      # Generate Allure report (if you're using Allure reporting)
       - name: Generate Allure report
+        if: success()
         run: |
           npx allure generate allure-results --clean
           npx allure open
