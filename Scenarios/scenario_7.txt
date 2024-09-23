@@ -1,0 +1,4 @@
+Scenario: Filter cards on the board.
+  Given Considering I'm on a board page with multiple cards
+  When I apply the alphabetical filter
+  Then I should see the cards, in alphabetical order.
