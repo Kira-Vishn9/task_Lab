@@ -9,20 +9,31 @@ exports.config = {
     exclude: [],
     maxInstances: 1,
     capabilities: [
+        // {
+        //     browserName: 'chrome',
+        //     'goog:chromeOptions': {
+        //         args: ['--headless', '--disable-gpu', '--window-size=1280,800']
+        //     }
+        // },
+        // {
+        //     browserName: 'firefox',
+        //     'moz:firefoxOptions': {
+        //         args: ['-headless']
+        //     }
+        // },
         {
-            browserName: 'chrome',
-            'goog:chromeOptions': {
+            maxInstances: 1,
+            browserName: 'safari',
+            'safari.options': {
+                technologyPreview: false, // Set to true if using Safari Technology Preview
+            }
+        },
+        {
+            maxInstances: 1,
+            browserName: 'MicrosoftEdge',
+            'ms:edgeOptions': {
                 args: ['--headless', '--disable-gpu', '--window-size=1280,800']
             }
-        },
-        {
-            browserName: 'firefox',
-            'moz:firefoxOptions': {
-                args: ['-headless']
-            }
-        },
-        {
-            browserName: 'safari'
         }
     ],
     logLevel: 'error',
