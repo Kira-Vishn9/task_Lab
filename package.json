@@ -21,6 +21,7 @@
     "@wdio/spec-reporter": "^8.39.0",
     "@wdio/sync": "^7.27.0",
     "allure-commandline": "^2.28.0",
+    "chai": "^5.1.1",
     "chromedriver": "^123.0.1"
   },
   "dependencies": {

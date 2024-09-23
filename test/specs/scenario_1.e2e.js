@@ -5,7 +5,9 @@ const { browser } = require('@wdio/globals')
 describe('My Login application', () => {
     it('should login with valid credentials', async () => {
         browser.url(`https://trello.com/home`)
-        await $("//a[contains(text(), 'Log in')]").waitForDisplayed();
+        await browser.refresh()
+        browser.pause(15000)
+        await $("//a[contains(text(), 'Log in')]").waitForDisplayed({ timeout: 20000 });
         await $("//a[contains(text(), 'Log in')]").click();
         await $('#username').setValue('krtstgml@gmail.com');
         await $('#login-submit').click();

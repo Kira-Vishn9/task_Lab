@@ -1,5 +1,7 @@
 const {existsSync, mkdirSync} = require('fs');
 const allure = require('allure-commandline');
+const chai = require('chai');  
+const expect = chai.expect; 
 
 exports.config = {
     runner: 'local',
@@ -20,21 +22,7 @@ exports.config = {
             'moz:firefoxOptions': {
                 args: ['-headless']
             }
-        },
-        // {
-        //     maxInstances: 1,
-        //     browserName: 'safari',
-        //     'safari.options': {
-        //         technologyPreview: false, // Set to true if using Safari Technology Preview
-        //     }
-        // },
-        // {
-        //     maxInstances: 1,
-        //     browserName: 'MicrosoftEdge',
-        //     'ms:edgeOptions': {
-        //         args: ['--headless']
-        //     }
-        // }
+        }
     ],
     logLevel: 'error',
     bail: 0,
@@ -56,6 +44,10 @@ exports.config = {
         retries: 2,
     },
     before: function() {
+        global.expect = chai.expect;
+        global.assert = chai.assert;
+        global.should = chai.should();
+
         browser.maximizeWindow();
     },
     afterTest: async function(test, context, { error }) {

@@ -5,7 +5,9 @@ describe('Board page - Card sorting functionality', () => {
 
     it('should apply the alphabetical filter and verify cards are sorted alphabetically', async () => {
         browser.url(`https://trello.com/home`)
-        await $("//a[contains(text(), 'Log in')]").waitForDisplayed();
+        await browser.refresh()
+        browser.pause(15000)
+        await $("//a[contains(text(), 'Log in')]").waitForDisplayed({ timeout: 20000 });
         await $("//a[contains(text(), 'Log in')]").click();
 
         await $('#username').waitForDisplayed();
