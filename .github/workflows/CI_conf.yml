@@ -28,14 +28,5 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Install WebDriver for Edge
-      run: npm install edgedriver --save-dev  # Исправлен отступ
-
-    - name: Install WebDriver for Chrome
-      run: npm install chromedriver --save-dev
-
-    - name: Install WebDriver for Firefox
-      run: npm install geckodriver --save-dev
-
     - name: Run WebDriverIO tests
       run: npx wdio run wdio.conf.js
