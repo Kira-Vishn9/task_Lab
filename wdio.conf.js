@@ -7,20 +7,20 @@ exports.config = {
         './test/specs/**/*.e2e.js'
     ],
     exclude: [],
-    maxInstances: 1,
+    maxInstances: 2,
     capabilities: [
-        // {
-        //     browserName: 'chrome',
-        //     'goog:chromeOptions': {
-        //         args: ['--headless', '--disable-gpu', '--window-size=1280,800']
-        //     }
-        // },
-        // {
-        //     browserName: 'firefox',
-        //     'moz:firefoxOptions': {
-        //         args: ['-headless']
-        //     }
-        // },
+        {
+            browserName: 'chrome',
+            'goog:chromeOptions': {
+                args: ['--headless', '--disable-gpu', '--window-size=1280,800']
+            }
+        },
+        {
+            browserName: 'firefox',
+            'moz:firefoxOptions': {
+                args: ['-headless']
+            }
+        },
         // {
         //     maxInstances: 1,
         //     browserName: 'safari',
@@ -28,13 +28,13 @@ exports.config = {
         //         technologyPreview: false, // Set to true if using Safari Technology Preview
         //     }
         // },
-        {
-            maxInstances: 1,
-            browserName: 'MicrosoftEdge',
-            'ms:edgeOptions': {
-                args: ['--headless']
-            }
-        }
+        // {
+        //     maxInstances: 1,
+        //     browserName: 'MicrosoftEdge',
+        //     'ms:edgeOptions': {
+        //         args: ['--headless']
+        //     }
+        // }
     ],
     logLevel: 'error',
     bail: 0,
