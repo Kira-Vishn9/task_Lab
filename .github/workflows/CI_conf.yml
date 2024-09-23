@@ -29,7 +29,7 @@ jobs:
       run: npm install
 
     - name: Install WebDriver for Edge
-    run: npm install edgedriver --save-dev
+      run: npm install edgedriver --save-dev  # Исправлен отступ
 
     - name: Install WebDriver for Chrome
       run: npm install chromedriver --save-dev
