@@ -21,9 +21,9 @@ exports.config = {
                 args: ['-headless']
             }
         },
-        // {
-        //     browserName: 'safari'
-        // }
+        {
+            browserName: 'safari'
+        }
     ],
     logLevel: 'error',
     bail: 0,
