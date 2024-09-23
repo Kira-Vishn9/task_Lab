@@ -3,7 +3,6 @@ const { browser } = require('@wdio/globals');
 
 describe('Verify Profile changes', () => {
     afterEach(async function() {
-        this.retries(1);
         await $('#bio').setValue(" ");
         await $("[type='submit']").click();
     });
