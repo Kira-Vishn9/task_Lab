@@ -21,13 +21,13 @@ exports.config = {
         //         args: ['-headless']
         //     }
         // },
-        {
-            maxInstances: 1,
-            browserName: 'safari',
-            'safari.options': {
-                technologyPreview: false, // Set to true if using Safari Technology Preview
-            }
-        },
+        // {
+        //     maxInstances: 1,
+        //     browserName: 'safari',
+        //     'safari.options': {
+        //         technologyPreview: false, // Set to true if using Safari Technology Preview
+        //     }
+        // },
         {
             maxInstances: 1,
             browserName: 'MicrosoftEdge',
