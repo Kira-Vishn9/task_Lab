@@ -14,8 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
-        browser: [chrome, firefox]
+        node-version: [16.x] # WebDriverIO поддерживает Node.js 16
 
     steps:
     - name: Checkout code
@@ -31,22 +30,3 @@ jobs:
 
     - name: Run WebDriverIO tests
       run: npx wdio run wdio.conf.js
-
-    - name: Generate Allure report (optional)
-      if: always()
-      run: |
-        npx allure generate allure-results --clean
-
-    - name: Upload Allure Results
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: allure-results
-        path: allure-results/
-
-    - name: Upload Screenshots
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: screenshots
-        path: artifacts/screenshots/
