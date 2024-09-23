@@ -5,10 +5,8 @@ describe('Create a new card in a list', () => {
 
     it('should log in, create a board and list, then add a new card to the list', async () => {
         browser.url(`https://trello.com/home`)
-        await browser.refresh()
-        browser.pause(15000)
-        await $("//a[contains(text(), 'Log in')]").waitForDisplayed({ timeout: 20000 });
-        await $("//a[contains(text(), 'Log in')]").click();
+        await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").waitForDisplayed();
+        await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").click();
 
         await $('#username').waitForDisplayed();
         await $('#username').setValue('krtstgml@gmail.com');
