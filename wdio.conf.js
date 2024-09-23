@@ -4,7 +4,7 @@ const allure = require('allure-commandline');
 exports.config = {
     runner: 'local',
     specs: [
-        './test/specs/**/scenario_0.e2e.js'
+        './test/specs/**/*.e2e.js'
     ],
     exclude: [],
     maxInstances: 2,
