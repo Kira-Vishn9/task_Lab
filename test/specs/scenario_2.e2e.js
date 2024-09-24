@@ -11,6 +11,12 @@ describe('Verify Profile changes', () => {
 
     it('Edit bio in profile name', async () => {
         await browser.url(`https://trello.com/home`)
+        await browser.waitUntil(() => {
+            return browser.execute(() => document.readyState === 'complete');
+        }, {
+            timeout: 30000,
+            timeoutMsg: 'page is not loaded'
+        });
         await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").waitForDisplayed();
         await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").click();
 

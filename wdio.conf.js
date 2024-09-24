@@ -26,7 +26,7 @@ export const config = {
     logLevel: 'error',
     bail: 0,
     baseUrl: 'http://localhost:8080',
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     framework: 'mocha',
@@ -39,7 +39,7 @@ export const config = {
     ],
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000,
+        timeout: 100000,
         retries: 2,
     },
     // before: function() {

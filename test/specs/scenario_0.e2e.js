@@ -5,6 +5,13 @@ describe('Workspace settings - Editing workspace name', () => {
 
     it('should allow the user to edit the workspace name and save the changes', async () => {
         await browser.url(`https://trello.com/home`)
+
+        await browser.waitUntil(() => {
+            return browser.execute(() => document.readyState === 'complete');
+        }, {
+            timeout: 30000,
+            timeoutMsg: 'page is not loaded'
+        });
         await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").waitForDisplayed();
         await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").click();
 
