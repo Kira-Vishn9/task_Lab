@@ -9,12 +9,12 @@ exports.config = {
     exclude: [],
     maxInstances: 2,
     capabilities: [
-        {
-            browserName: 'chrome',
-            'goog:chromeOptions': {
-                args: ['--headless', '--disable-gpu', '--window-size=1280,800']
-            }
-        },
+        // {
+        //     browserName: 'chrome',
+        //     'goog:chromeOptions': {
+        //         args: ['--headless', '--disable-gpu', '--window-size=1280,800']
+        //     }
+        // },
         {
             browserName: 'firefox',
             'moz:firefoxOptions': {
