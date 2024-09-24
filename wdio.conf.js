@@ -10,18 +10,18 @@ export const config = {
     exclude: [],
     maxInstances: 2,
     capabilities: [
-        // {
-        //     browserName: 'chrome',
-        //     'goog:chromeOptions': {
-        //         args: ['--headless', '--disable-gpu', '--window-size=1280,800']
-        //     }
-        // },
         {
-            browserName: 'firefox',
-            'moz:firefoxOptions': {
-                args: ['-headless']
+            browserName: 'chrome',
+            'goog:chromeOptions': {
+                args: ['--headless', '--disable-gpu', '--window-size=1280,800']
             }
         },
+        // {
+        //     browserName: 'firefox',
+        //     'moz:firefoxOptions': {
+        //         args: ['-headless']
+        //     }
+        // },
     ],
     logLevel: 'error',
     bail: 0,
