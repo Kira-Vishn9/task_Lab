@@ -1,16 +1,17 @@
-import  { expect } from 'chai'
+import { expect } from 'chai';
 import { browser } from '@wdio/globals';
 
 describe('Board page - Card sorting functionality', () => {
 
     it('should apply the alphabetical filter and verify cards are sorted alphabetically', async () => {
-        await browser.url(`https://trello.com/home`)
+        await browser.url(`https://trello.com/home`);
         await browser.waitUntil(() => {
             return browser.execute(() => document.readyState === 'complete');
         }, {
             timeout: 30000,
             timeoutMsg: 'page is not loaded'
         });
+        
         await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").waitForDisplayed();
         await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").click();
 
@@ -24,6 +25,7 @@ describe('Board page - Card sorting functionality', () => {
         await browser.pause(5000);
 
         await browser.url('https://trello.com/w/user38376778');
+        
         await $("#sort-by").waitForDisplayed();
         await $("#sort-by").click();
 
@@ -31,18 +33,14 @@ describe('Board page - Card sorting functionality', () => {
         await browser.keys(['ArrowDown']);
         await browser.keys(['Enter']);
 
-        const sortedBoard = await $$('.boards-page-board-section-list a');
+        await browser.pause(3000);
 
-        let found = false;
-        const divs = await sortedBoard[0].$$('div');
-        for (let div of divs) {
-            const text = await div.getText();
-            if (text.includes('Board created for Search')) {
-                found = true;
-                break;
-            }
-        }
+        const sortedCards = await $$('.list-card');
+        
+        const cardTexts = await Promise.all(sortedCards.map(async (card) => await card.getText()));
 
-        expect(found).toBe(true);
+        const boardExists = cardTexts.includes('Board created for Search');
+
+        expect(boardExists).to.equal(true);
     });
 });

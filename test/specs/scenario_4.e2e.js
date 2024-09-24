@@ -1,10 +1,10 @@
-import  { expect } from 'chai'
+import { expect } from 'chai';
 import { browser } from '@wdio/globals';
 
 describe('Search for an existing board on Trello', () => {
 
     it('should log in, search for a board, and verify it appears in the search results', async () => {
-        await browser.url(`https://trello.com/home`)
+        await browser.url(`https://trello.com/home`);
         await browser.waitUntil(() => {
             return browser.execute(() => document.readyState === 'complete');
         }, {
@@ -24,9 +24,13 @@ describe('Search for an existing board on Trello', () => {
         await browser.pause(5000);
 
         await browser.url('https://trello.com/search');
+        await $('input[data-testid="advanced-search-input"]').waitForDisplayed();
         await $('input[data-testid="advanced-search-input"]').setValue("Board created for Search");
 
         const result = await $('a[title="Board created for Search"]');
-        expect(result).toBeDisabled(true);
+        await result.waitForDisplayed();
+
+        const isDisplayed = await result.isDisplayed();
+        expect(isDisplayed).to.be.true;
     });
 });

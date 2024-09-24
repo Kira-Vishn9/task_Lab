@@ -1,10 +1,10 @@
-import  { expect } from 'chai'
+import { expect } from 'chai';
 import { browser } from '@wdio/globals';
 
 describe('Create a new board on Trello', () => {
 
     it('should log in, create a new board, and verify its creation and redirection', async () => {
-        await browser.url(`https://trello.com/home`)
+        await browser.url(`https://trello.com/home`);
         await browser.waitUntil(() => {
             return browser.execute(() => document.readyState === 'complete');
         }, {
@@ -21,7 +21,7 @@ describe('Create a new board on Trello', () => {
         await $('#password').waitForDisplayed();
         await $('#password').setValue('demotest69');
         await $('#login-submit').click();
-        await browser.pause(5000)
+        await browser.pause(5000);
 
         await browser.url('https://trello.com/w/user38376778');
         await $(".mod-add").waitForDisplayed();
@@ -33,6 +33,8 @@ describe('Create a new board on Trello', () => {
 
         const boardTitleElement = await $("[data-testid='board-name-display']");
         await boardTitleElement.waitForDisplayed();
-        await expect(boardTitleElement).toHaveText("Board created from Workspace");
+
+        const boardTitle = await boardTitleElement.getText();
+        expect(boardTitle).to.equal("Board created from Workspace");
     });
 });

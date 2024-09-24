@@ -1,10 +1,10 @@
-import  { expect } from 'chai'
+import { expect } from 'chai';
 import { browser } from '@wdio/globals';
 
 describe('Create a new card in a list', () => {
 
     it('should log in, create a board and list, then add a new card to the list', async () => {
-        await browser.url(`https://trello.com/home`)
+        await browser.url(`https://trello.com/home`);
         await browser.waitUntil(() => {
             return browser.execute(() => document.readyState === 'complete');
         }, {
@@ -21,7 +21,7 @@ describe('Create a new card in a list', () => {
         await $('#password').waitForDisplayed();
         await $('#password').setValue('demotest69');
         await $('#login-submit').click();
-        await browser.pause(5000)
+        await browser.pause(5000);
 
         await browser.url('https://trello.com/u/krtstgml/boards');
         await $("[data-testid='header-create-menu-button']").waitForDisplayed();
@@ -53,7 +53,8 @@ describe('Create a new card in a list', () => {
         await $("[data-testid='list-card-composer-add-card-button']").waitForDisplayed();
         await $("[data-testid='list-card-composer-add-card-button']").click(); 
 
-        const result = $("[data-testid='card-name']")
-        await expect(result).toHaveText("My card");
+        const result = await $("[data-testid='card-name']");
+        const cardName = await result.getText();
+        expect(cardName).to.equal("My card");
     });
 });

@@ -8,7 +8,7 @@ export const config = {
         './test/specs/**/*.e2e.js'
     ],
     exclude: [],
-    maxInstances: 2,
+    maxInstances: 1,
     capabilities: [
         {
             browserName: 'chrome',

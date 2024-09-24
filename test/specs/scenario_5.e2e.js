@@ -1,10 +1,10 @@
-import  { expect } from 'chai'
+import { expect } from 'chai';
 import { browser } from '@wdio/globals';
 
 describe('Create a new list on a board', () => {
 
     it('should log in, create a board, and add a new list to it', async () => {
-        await browser.url(`https://trello.com/home`)
+        await browser.url(`https://trello.com/home`);
         await browser.waitUntil(() => {
             return browser.execute(() => document.readyState === 'complete');
         }, {
@@ -21,7 +21,7 @@ describe('Create a new list on a board', () => {
         await $('#password').waitForDisplayed();
         await $('#password').setValue('demotest69');
         await $('#login-submit').click();
-        await browser.pause(5000)
+        await browser.pause(5000);
 
         await browser.url('https://trello.com/u/krtstgml/boards');
         await $("[data-testid='header-create-menu-button']").waitForDisplayed();
@@ -42,7 +42,8 @@ describe('Create a new list on a board', () => {
         await $("[data-testid='list-composer-add-list-button']").waitForDisplayed();
         await $("[data-testid='list-composer-add-list-button']").click(); 
         
-        const result = await $("[data-testid='list-name']")
-        await expect(result).toHaveText("My list 100");
+        const result = await $("[data-testid='list-name']");
+        const listName = await result.getText();
+        expect(listName).to.equal("My list 100");
     });
 });
