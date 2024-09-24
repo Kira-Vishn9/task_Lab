@@ -4,9 +4,9 @@ import { browser } from '@wdio/globals';
 describe('Create a new list on a board', () => {
 
     it('should log in, create a board, and add a new list to it', async () => {
-        browser.url(`https://trello.com/home`)
-        await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").waitForDisplayed();
-        await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").click();
+        browser.url(`https://trello.com/home`);
+        await $('//div[contains(@class, "jnMZCI")]/a[text()="Log in"]').waitForDisplayed();
+        await $('//div[contains(@class, "jnMZCI")]/a[text()="Log in"]').click();
 
         await $('#username').waitForDisplayed();
         await $('#username').setValue('krtstgml@gmail.com');

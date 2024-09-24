@@ -11,8 +11,8 @@ describe('Verify Profile changes', () => {
 
     it('Edit bio in profile name', async () => {
         browser.url(`https://trello.com/home`);
-        await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").waitForDisplayed();
-        await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").click();
+        await $('//div[contains(@class, "jnMZCI")]/a[text()="Log in"]').waitForDisplayed();
+        await $('//div[contains(@class, "jnMZCI")]/a[text()="Log in"]').click();
 
         await $('#username').waitForDisplayed();
         await $('#username').setValue('krtstgml@gmail.com');
