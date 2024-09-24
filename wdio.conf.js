@@ -1,7 +1,8 @@
-const {existsSync, mkdirSync} = require('fs');
-const allure = require('allure-commandline');
+// const {existsSync, mkdirSync} = require('fs');
+// const allure = require('allure-commandline');
 
-exports.config = {
+
+export const config = {
     runner: 'local',
     specs: [
         './test/specs/**/*.e2e.js'

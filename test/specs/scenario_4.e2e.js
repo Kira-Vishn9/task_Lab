@@ -1,5 +1,5 @@
-const { expect } = require('@wdio/globals');
-const { browser } = require('@wdio/globals');
+import  { expect } from 'chai'
+import { browser } from '@wdio/globals';
 
 describe('Search for an existing board on Trello', () => {
 
