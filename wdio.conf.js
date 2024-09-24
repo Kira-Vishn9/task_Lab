@@ -39,8 +39,8 @@ export const config = {
     ],
     mochaOpts: {
         ui: 'bdd',
-        timeout: 100000,
-        retries: 2,
+        timeout: 90000,
+        retries: 0,
     },
     // before: function() {
     //     browser.maximizeWindow();
