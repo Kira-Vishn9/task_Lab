@@ -1,39 +1,14 @@
 import { expect } from 'chai';
 import { browser } from '@wdio/globals';
+import LoginPage from '../../business/LoginPage.js'
+import WorkSpace from '../../business/WorkSpace.js'
 
 describe('Board page - Card sorting functionality', () => {
 
     it('should apply the alphabetical filter and verify cards are sorted alphabetically', async () => {
-        await browser.url(`https://trello.com/home`);
-        await browser.waitUntil(() => {
-            return browser.execute(() => document.readyState === 'complete');
-        }, {
-            timeout: 30000,
-            timeoutMsg: 'page is not loaded'
-        });
-        
-        await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").waitForDisplayed();
-        await $("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']").click();
-
-        await $('#username').waitForDisplayed();
-        await $('#username').setValue('krtstgml@gmail.com');
-        await $('#login-submit').click();
-
-        await $('#password').waitForDisplayed();
-        await $('#password').setValue('demotest69');
-        await $('#login-submit').click();
-        await browser.pause(5000);
-
-        await browser.url('https://trello.com/w/user38376778');
-        
-        await $("#sort-by").waitForDisplayed();
-        await $("#sort-by").click();
-
-        await browser.keys(['ArrowDown']);
-        await browser.keys(['ArrowDown']);
-        await browser.keys(['Enter']);
-
-        await browser.pause(3000);
+        await LoginPage.login()
+        await WorkSpace.open()
+        await WorkSpace.sort()
 
         const cardText = await $$('.board-tile-details-name')[0].getText();
 
