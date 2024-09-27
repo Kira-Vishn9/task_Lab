@@ -7,7 +7,7 @@ class LoginPage extends BasePage {
     }
 
     async login() {
-        super.open('home');
+        this.open('home');
 
         await this.click("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']");
 
