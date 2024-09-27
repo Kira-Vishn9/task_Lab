@@ -1,0 +1,32 @@
+name: WebDriverIO Tests
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x] # WebDriverIO поддерживает Node.js 16
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run WebDriverIO tests
+      run: npx wdio run wdio.conf.js
