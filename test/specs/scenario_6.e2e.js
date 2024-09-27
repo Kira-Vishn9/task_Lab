@@ -10,6 +10,9 @@ describe('Create a new card in a list', () => {
         await BoardPage.open()
         await BoardPage.createBoard()
         await BoardPage.createList()
+        
+        await browser.refresh()
+
         await BoardPage.createCard()
 
         const card = await $("[data-testid='card-name']");
