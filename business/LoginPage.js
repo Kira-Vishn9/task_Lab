@@ -2,10 +2,6 @@ import { browser } from '@wdio/globals';
 import BasePage from '../base/BasePage.js';
 
 class LoginPage extends BasePage {
-    constructor(){
-        super()
-    }
-
     async login() {
         this.open('home');
 
