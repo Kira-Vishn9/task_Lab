@@ -1,5 +1,5 @@
 import { browser } from '@wdio/globals';
-import BasePage from '../base/BasePage.js';
+import BasePage from '../base/BasePage.js'
 
 class LoginPage extends BasePage {
     async login() {
