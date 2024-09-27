@@ -27,10 +27,11 @@ describe('Search for an existing board on Trello', () => {
         await $('input[data-testid="advanced-search-input"]').waitForDisplayed();
         await $('input[data-testid="advanced-search-input"]').setValue("Board created for Search");
 
-        const result = await $('a[title="Board created for Search"]');
-        await result.waitForDisplayed();
+        await browser.pause(10000);
 
-        const isDisplayed = await result.isDisplayed();
+        const searchBoard = await $('//a[.//span[text()="Board created for Search"]]');
+        await searchBoard.waitForDisplayed();
+        const isDisplayed = await searchBoard.isDisplayed();
         expect(isDisplayed).to.be.true;
     });
 });

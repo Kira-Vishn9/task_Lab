@@ -35,12 +35,8 @@ describe('Board page - Card sorting functionality', () => {
 
         await browser.pause(3000);
 
-        const sortedCards = await $$('.list-card');
-        
-        const cardTexts = await Promise.all(sortedCards.map(async (card) => await card.getText()));
+        const cardText = await $$('.board-tile-details-name')[0].getText();
 
-        const boardExists = cardTexts.includes('Board created for Search');
-
-        expect(boardExists).to.equal(true);
+        expect(cardText).to.deep.equal("Board created for Search"); 
     });
 });
