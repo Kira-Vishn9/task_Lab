@@ -17,7 +17,7 @@ class LoginPage extends BasePage {
 
         await this.BP(10000);
     }
-}
+}  
 
 export default new LoginPage();
 
