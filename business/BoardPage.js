@@ -1,9 +1,9 @@
+import { browser } from '@wdio/globals';
 import BasePage from '../base/BasePage.js';
 
 class BoardPage extends BasePage {
-
     open() {
-        this.open('u/krtstgml/boards');
+        return super.open('u/krtstgml/boards');
     }
 
     async createBoard() {

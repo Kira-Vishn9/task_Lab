@@ -2,9 +2,8 @@ import { browser } from '@wdio/globals';
 import BasePage from '../base/BasePage.js';
 
 class WorkSpace extends BasePage {
-
-    async open() {
-        await this.open('w/user38376778');
+    open() {
+        return super.open('w/user38376778');
     }
 
     async sort() {

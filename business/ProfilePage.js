@@ -1,9 +1,9 @@
+import { browser } from '@wdio/globals';
 import BasePage from '../base/BasePage.js';
 
 class ProfilePage extends BasePage {
-
     open() {
-        this.open('u/krtstgml');
+        return super.open('u/krtstgml');
     }
 
     async changeBio() {

@@ -1,3 +1,4 @@
+import { browser } from '@wdio/globals';
 import BasePage from '../base/BasePage.js';
 
 class LoginPage extends BasePage {
@@ -6,7 +7,7 @@ class LoginPage extends BasePage {
     }
 
     async login() {
-        this.open('home');
+        super.open('home');
 
         await this.click("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']");
 
