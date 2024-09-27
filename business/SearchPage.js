@@ -1,16 +1,14 @@
-import { browser } from '@wdio/globals';
+import BasePage from '../base/BasePage.js';
 
-class SearchPage  {
+class SearchPage extends BasePage {
 
-    open(){
-        browser.url('https://trello.com/search');
+    open() {
+        this.open('search');
     }
 
     async search() {
-        await $('input[data-testid="advanced-search-input"]').waitForDisplayed();
-        await $('input[data-testid="advanced-search-input"]').setValue("Board created for Search");
+        await this.inputText('input[data-testid="advanced-search-input"]', 'Board created for Search');
     }
-    
 }
 
 export default new SearchPage();

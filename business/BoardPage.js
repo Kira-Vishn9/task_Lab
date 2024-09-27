@@ -1,44 +1,28 @@
-import { browser } from '@wdio/globals';
+import BasePage from '../base/BasePage.js';
 
-class BoardPage  {
+class BoardPage extends BasePage {
 
-    open(){
-        browser.url('https://trello.com/u/krtstgml/boards');
+    open() {
+        this.open('u/krtstgml/boards');
     }
 
     async createBoard() {
-        await $("[data-testid='header-create-menu-button']").waitForDisplayed();
-        await $("[data-testid='header-create-menu-button']").click();
-
-        await $("[data-testid='header-create-board-button']").waitForDisplayed();
-        await $("[data-testid='header-create-board-button']").click();
-
-        await $("[data-testid='create-board-title-input']").waitForDisplayed();
-        await $("[data-testid='create-board-title-input']").setValue("Board for List");
-
-        await $("button[data-testid='create-board-submit-button']").waitForDisplayed();
-        await $("button[data-testid='create-board-submit-button']").click();
+        await this.click("[data-testid='header-create-menu-button']");
+        await this.click("[data-testid='header-create-board-button']");
+        await this.inputText("[data-testid='create-board-title-input']", "Board for List");
+        await this.click("button[data-testid='create-board-submit-button']");
     }
 
-    async createList () {
-        await $("textarea[data-testid='list-name-textarea']").waitForDisplayed();
-        await $("textarea[data-testid='list-name-textarea']").setValue("My list 100");
-
-        await $("[data-testid='list-composer-add-list-button']").waitForDisplayed();
-        await $("[data-testid='list-composer-add-list-button']").click();
+    async createList() {
+        await this.inputText("textarea[data-testid='list-name-textarea']", "My list 100");
+        await this.click("[data-testid='list-composer-add-list-button']");
     }
 
-    async createCard () {
-        await $("[data-testid='list-add-card-button']").waitForDisplayed();
-        await $("[data-testid='list-add-card-button']").click(); 
-
-        await $("[data-testid='list-card-composer-textarea']").waitForDisplayed();
-        await $("[data-testid='list-card-composer-textarea']").setValue("My card"); 
-
-        await $("[data-testid='list-card-composer-add-card-button']").waitForDisplayed();
-        await $("[data-testid='list-card-composer-add-card-button']").click(); 
+    async createCard() {
+        await this.click("[data-testid='list-add-card-button']");
+        await this.inputText("[data-testid='list-card-composer-textarea']", "My card");
+        await this.click("[data-testid='list-card-composer-add-card-button']");
     }
-    
 }
 
 export default new BoardPage();

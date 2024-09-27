@@ -4,13 +4,13 @@ class BasePage {
 
     async click(selector) {
         const element = await $(selector);
-        await element.waitForDisplayed({timeout: 20000})
+        await element.waitForDisplayed({timeout: 10000})
         await element.click();
     }
 
     async inputText(selector, text) {
         const element = await $(selector);
-        await element.waitForDisplayed({timeout: 20000})
+        await element.waitForDisplayed({timeout: 10000})
         await element.setValue(text);
     }
 
@@ -18,8 +18,8 @@ class BasePage {
        await browser.pause(time)
     }
 
-    // open(path) {
-    //     return browser.url(`https://trello.com/${path}`);
-    // }
+    open(path) {
+        return browser.url(`https://trello.com/${path}`);
+    }
 }
-export default new BasePage();
+export default BasePage;

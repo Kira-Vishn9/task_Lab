@@ -1,16 +1,14 @@
-import { browser } from '@wdio/globals';
+import BasePage from '../base/BasePage.js';
 
-class ProfilePage  {
+class ProfilePage extends BasePage {
 
-    open(){
-        browser.url('https://trello.com/u/krtstgml');
+    open() {
+        this.open('u/krtstgml');
     }
 
-    async changeBio () {
-        await $('#bio').waitForDisplayed();
-        await $('#bio').setValue("Bio set by auto test");
-        await $("[type='submit']").waitForClickable();
-        await $("[type='submit']").click();
+    async changeBio() {
+        await this.inputText('#bio', 'Bio set by auto test');
+        await this.click("[type='submit']");
     }
 }
 
