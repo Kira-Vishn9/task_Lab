@@ -1,5 +1,5 @@
 import { browser } from '@wdio/globals';
-import BasePage from '../base/BasePage'
+import BasePage from '../base/BasePage.js'
 
 class BoardPage extends BasePage {
     open() {
