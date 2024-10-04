@@ -1,9 +1,11 @@
 import { expect } from 'chai';
-import { browser } from '@wdio/globals';
 import LoginPage from '../../business/LoginPage.js'
 import BoardPage from '../../business/BoardPage.js'
 
 describe('Create a new list on a board', () => {
+    before(async () => {
+        await LoginPage.open();
+    });
 
     it('should log in, create a board, and add a new list to it', async () => {
         await LoginPage.login()

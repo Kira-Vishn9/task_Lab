@@ -4,6 +4,9 @@ import LoginPage from '../../business/LoginPage.js'
 import BoardPage from '../../business/BoardPage.js'
 
 describe('Create a new card in a list', () => {
+    before(async () => {
+        await LoginPage.open();
+    });
 
     it('should log in, create a board and list, then add a new card to the list', async () => {
         await LoginPage.login()

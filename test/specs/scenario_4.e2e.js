@@ -4,7 +4,9 @@ import LoginPage from '../../business/LoginPage.js'
 import SearchPage from '../../business/SearchPage.js'
 
 describe('Search for an existing board on Trello', () => {
-
+    before(async () => {
+        await LoginPage.open();
+    });
     it('should log in, search for a board, and verify it appears in the search results', async () => {
         await LoginPage.login()
 

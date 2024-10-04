@@ -1,5 +1,6 @@
 // const {existsSync, mkdirSync} = require('fs');
 // const allure = require('allure-commandline');
+import { browser } from '@wdio/globals';
 
 
 export const config = {

@@ -13,8 +13,8 @@ class BasePage {
         await element.setValue(text);
     }
 
-    async BP(time) {
-        await browser.pause(time);
+    async BP(time){
+        await browser.pause(time)
     }
 
     open(path) {

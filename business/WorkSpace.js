@@ -1,7 +1,10 @@
 import { browser } from '@wdio/globals';
-import BasePage from '../Main/BasePage.js.js'
+import BasePage from '../Main/BasePage.js'
 
 class WorkSpace extends BasePage {
+    constructor(){
+        super()
+    }
     open() {
         return super.open('w/user38376778');
     }

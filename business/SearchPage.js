@@ -1,7 +1,10 @@
 import { browser } from '@wdio/globals';
-import BasePage from '../Main/BasePage.js.js'
+import BasePage from '../Main/BasePage.js'
 
 class SearchPage extends BasePage {
+    constructor(){
+        super()
+    }
     async open() {
         return super.open('search');
     }

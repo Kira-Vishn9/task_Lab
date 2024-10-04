@@ -1,7 +1,10 @@
-import { browser } from '@wdio/globals';
-import BasePage from '../Main/BasePage.js.js'
+import BasePage from '../Main/BasePage.js'
 
 class BoardPage extends BasePage {
+    constructor(){
+        super()
+    }
+    
     open() {
         return super.open('u/krtstgml/boards');
     }
@@ -23,6 +26,7 @@ class BoardPage extends BasePage {
         await this.inputText("[data-testid='list-card-composer-textarea']", "My card");
         await this.click("[data-testid='list-card-composer-add-card-button']");
     }
+   
 }
 
 export default new BoardPage();

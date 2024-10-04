@@ -10,6 +10,9 @@ describe('Verify Profile changes', () => {
         await $('#bio').setValue(" ");
         await $("[type='submit']").click();
     });
+    before(async () => {
+        await LoginPage.open();
+    });
 
     it('Edit bio in profile name', async () => {
         await LoginPage.login()
