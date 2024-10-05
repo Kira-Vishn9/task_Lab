@@ -1,0 +1,8 @@
+Scenario: Create a new board
+  Given I am logged in
+  And I am on the homepage
+  When I click the "Create" button
+  And I enter a board name
+  And I click the "Create board" button
+  Then I should see the new board on my homepage
+  And redirect to this board

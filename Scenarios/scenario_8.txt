@@ -1,0 +1,6 @@
+Scenario: Edit workspace settings
+  Given I am on the workspace settings page
+  When I click button edit workspace name
+  And I change the workspace name
+  And I click the "Save" button
+  Then I should see a new warkspace name indicating the workspace was updated successfully

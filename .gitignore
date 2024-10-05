@@ -1,0 +1,4 @@
+node_modules
+artifacts
+allure-results/
+reports/html/

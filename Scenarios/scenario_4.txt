@@ -1,0 +1,6 @@
+Scenario: Search for an existing board
+  Given I am logged in
+  And I am in a search page
+  And I have multiple boards
+  When I enter the board name in the search input
+  Then I should see results matching the query
