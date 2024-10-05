@@ -6,7 +6,7 @@ let reportAggregator;
 export const config = {
     runner: 'local',
     specs: [
-        './test/specs/**/scenario_1.e2e.js'
+        './test/specs/**/*.e2e.js'
     ],
     exclude: [],
     maxInstances: 1,
