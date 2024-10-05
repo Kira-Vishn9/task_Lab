@@ -1,4 +1,5 @@
-import { browser } from '@wdio/globals';
+import { ReportGenerator } from 'wdio-html-nice-reporter'; 
+let reportAggregator; 
 
 export const config = {
     runner: 'local',
@@ -24,20 +25,42 @@ export const config = {
     framework: 'mocha',
     reporters: [
         'spec',
+        ['html-nice', {
+            outputDir: './reports/html-reports/',
+            filename: 'report.html',
+            reportTitle: 'Test Report Title',
+            linkScreenshots: true,
+            showInBrowser: true,
+            collapseTests: false,
+            useOnAfterCommandForScreenshot: false
+        }],
         ['allure', {
             outputDir: 'allure-results',
             disableWebdriverStepsReporting: true,
             disableWebdriverScreenshotsReporting: true,
-        }],
-        ['html-nice', {
-            outputDir: './reports/html',
-            filename: 'report.html',
-            reportTitle: 'Test Report'
         }]
     ],
     mochaOpts: {
         ui: 'bdd',
         timeout: 90000,
         retries: 0,
+    },
+    onPrepare: function (config, capabilities) {
+        reportAggregator = new ReportGenerator({
+            outputDir: './reports/html-reports/',
+            filename: 'master-report.html',
+            reportTitle: 'Master Report',
+            browserName: capabilities.browserName,
+            collapseTests: true
+        });
+    
+    },
+    onComplete: async function (exitCode, config, capabilities, results) {
+        console.log('Results:', results); 
+        if (reportAggregator) {
+            await reportAggregator.createReport();
+        } else {
+            console.error('ReportAggregator is not defined');
+        }
     },
 };
