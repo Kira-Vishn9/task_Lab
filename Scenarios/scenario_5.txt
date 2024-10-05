@@ -1,0 +1,5 @@
+Scenario: Create a new list on a board
+  Given I am on the board page
+  When I click the "Add list" button
+  And I enter a list name
+  Then I should see the new list on the board
