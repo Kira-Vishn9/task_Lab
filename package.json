@@ -4,12 +4,13 @@
   "description": "Task module 7",
   "main": "index.js",
   "type": "module",
-  "scripts": {
+"scripts": {
     "wdio": "wdio run ./wdio.conf.js",
     "test": "wdio run wdio.conf.js",
-    "lint": "eslint './**/*.js' --fix",
-    "format": "prettier --write './**/*.js'"
-  },
+    "lint": "npx eslint \"./**/*.js\" --fix",
+    "format": "prettier --write \"./**/*.js\""
+},
+
   "keywords": [],
   "author": "",
   "license": "ISC",

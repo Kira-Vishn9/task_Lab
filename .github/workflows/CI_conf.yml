@@ -31,6 +31,10 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
     needs: lint
 
     steps:
@@ -40,10 +44,13 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 16.x
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm' 
 
     - name: Install dependencies
       run: npm install
 
     - name: Run WebDriverIO tests
       run: npm run wdio
+      env:
+        CI: true
