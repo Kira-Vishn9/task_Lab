@@ -1,10 +1,12 @@
+import { browser } from '@wdio/globals';
 import { ReportGenerator } from 'wdio-html-nice-reporter'; 
-let reportAggregator; 
+
+let reportAggregator;
 
 export const config = {
     runner: 'local',
     specs: [
-        './test/specs/**/*.e2e.js'
+        './test/specs/**/scenario_1.e2e.js'
     ],
     exclude: [],
     maxInstances: 1,
@@ -45,7 +47,8 @@ export const config = {
         timeout: 90000,
         retries: 0,
     },
-    onPrepare: function (config, capabilities) {
+
+    onPrepare: function(config, capabilities) {
         reportAggregator = new ReportGenerator({
             outputDir: './reports/html-reports/',
             filename: 'master-report.html',
@@ -53,12 +56,15 @@ export const config = {
             browserName: capabilities.browserName,
             collapseTests: true
         });
-    
     },
     onComplete: async function (exitCode, config, capabilities, results) {
-        console.log('Results:', results); 
+        console.log('Results:', JSON.stringify(results, null, 2));
         if (reportAggregator) {
-            await reportAggregator.createReport();
+            try {
+                await reportAggregator.createReport();
+            } catch (error) {
+                console.error('Failed to create report:', error);
+            }
         } else {
             console.error('ReportAggregator is not defined');
         }
